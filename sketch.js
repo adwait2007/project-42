@@ -113,6 +113,7 @@ function draw() {
     player.changeAnimation("Running",player_running);
     backgr.velocityX=-4;
     score=0;
+    player.scale=0.1;
   }
 
 
