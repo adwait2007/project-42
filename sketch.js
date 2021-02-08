@@ -68,7 +68,7 @@ function draw() {
      backgr.x=backgr.width/2;
    }
   
-    if(keyDown("space") ) {
+    if(keyDown("space") &&  player.y>270) {
       player.velocityY = -12;
     }
     player.velocityY = player.velocityY + 0.8;
@@ -93,6 +93,7 @@ function draw() {
   }
   if(gameState===END){
     backgr.velocityX=0;
+    player.velocityY=0;
     player.changeAnimation("Standing",player_standing);
     gameOver.visible=true;
     reset.visible=true;
@@ -130,7 +131,7 @@ function spawnBananas(){
       bananas=createSprite(850,250,40,10);
       bananas.y=Math.round(random(120,220));
       bananas.addImage(bananas_IMG);
-      bananas.scale=0.12;
+      bananas.scale=0.09;
       bananas.velocityX=-4;
       bananas.lifetime=200;
       player.depth=bananas.depth+1;
@@ -139,7 +140,7 @@ function spawnBananas(){
 }
 
 function spawnObstacles(){
-  if(frameCount%60===0){
+  if(frameCount%100===0){
     stone=createSprite(900,340,20,50);
     stone.addImage(stone_IMG);
     stone.scale=0.12;
