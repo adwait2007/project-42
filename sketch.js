@@ -127,7 +127,7 @@ function draw() {
 }
 
 function spawnBananas(){
-    if(frameCount%80===0){
+    if(frameCount%200===0){
       bananas=createSprite(850,250,40,10);
       bananas.y=Math.round(random(120,220));
       bananas.addImage(bananas_IMG);
